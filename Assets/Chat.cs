@@ -15,7 +15,7 @@ public class Chat : NetworkBehaviour
 	}
 
 	// Client to Server
-	[Rpc(SendTo.Server, RequireOwnership = true, Delivery = RpcDelivery.Reliable)]
+	[Rpc(SendTo.Server, RequireOwnership = false, Delivery = RpcDelivery.Reliable)]
 	public void SendMessageToServerFromClient_Rpc(string message)
 	{
 		Debug.Log("*** Message from client: " + message);
