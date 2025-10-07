@@ -6,6 +6,7 @@ public class Chat : NetworkBehaviour
 {
 	public TextMeshProUGUI messageText;
 		
+	// Server to Clients
 	[Rpc(SendTo.ClientsAndHost, RequireOwnership = true, Delivery = RpcDelivery.Reliable)]
 	public void SendMessageToClients_Rpc(string message)
 	{
@@ -18,5 +19,12 @@ public class Chat : NetworkBehaviour
 	{
 		Debug.Log("Client: "+message);
 		messageText.text += "Client: "+message + "\n";
+	}
+	
+	// Client to Server
+	[Rpc(SendTo.Server, RequireOwnership = false, Delivery = RpcDelivery.Reliable)]
+	public void SendMessageToServerFromClient(string message)
+	{
+		Debug.Log("*** Message from client: "+message);
 	}
 }
