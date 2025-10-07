@@ -46,5 +46,6 @@ public class Chat : NetworkBehaviour
 	public void SendMessageToServerFromClient_Rpc(string message)
 	{
 		Debug.Log("*** Message from client: " + message);
+		SendMessageToClientsFromServer_Rpc(message);
 	}
 }
