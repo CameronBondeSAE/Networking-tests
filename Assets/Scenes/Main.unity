@@ -1602,14 +1602,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1524055259}
         m_TargetAssemblyTypeName: Chat, Assembly-CSharp
-        m_MethodName: SendMessageToClients_Rpc
+        m_MethodName: SendMessageToClientsFromServer_Rpc
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: HELLO
+          m_StringArgument: HELLO from server
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1784820023
@@ -1950,14 +1950,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1524055259}
         m_TargetAssemblyTypeName: Chat, Assembly-CSharp
-        m_MethodName: SendMessageToClients_Rpc
+        m_MethodName: SendMessageToServerFromClient_Rpc
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: HELLO
+          m_StringArgument: Client says hello
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2139205579
