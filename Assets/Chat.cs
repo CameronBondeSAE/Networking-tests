@@ -1,17 +1,22 @@
+using TMPro;
 using Unity.Netcode;
 using UnityEngine;
 
 public class Chat : NetworkBehaviour
 {
+	public TextMeshProUGUI messageText;
 		
 	[Rpc(SendTo.ClientsAndHost, RequireOwnership = true, Delivery = RpcDelivery.Reliable)]
 	public void SendMessageToClients_Rpc(string message)
 	{
-		Debug.Log("Sending message: " + message);
+		Debug.Log("Server: " + message);
+		messageText.text += "Server: "+message + "\n";
 	}
-	//
-	// public void ReceiveMessage(string message)
-	// {
-	// 	Debug.Log("Received message: " + message);
-	// }
+
+	[Rpc(SendTo.Server, RequireOwnership = true, Delivery = RpcDelivery.Reliable)]
+	public void SendMessageToServerFromClient_Rpc(string message)
+	{
+		Debug.Log("Client: "+message);
+		messageText.text += "Client: "+message + "\n";
+	}
 }

@@ -18,7 +18,7 @@ namespace Unity.Netcode.Samples
             GUILayout.BeginArea(new Rect(10, 10, 100, 400));
 
             var networkManager = NetworkManager.Singleton;
-            if (!networkManager.IsClient && !networkManager.IsServer)
+            if (networkManager != null && !networkManager.IsClient && !networkManager.IsServer)
             {
 	            GUIStyle myButtonStyle          = new GUIStyle(GUI.skin.button);
 	            myButtonStyle.fontSize = 20;
